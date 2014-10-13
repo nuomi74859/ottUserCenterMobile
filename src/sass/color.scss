@@ -1,0 +1,7 @@
+@import "compass/css3";
+.ott-bg-red {
+  background:rgba(220, 221, 230, 0.6);
+}
+.ott-bg {
+  @include background(linear-gradient(top, #F27405,#FA9D87));
+}

@@ -1,0 +1,15 @@
+@import "easy-animation";
+@import "ease";
+.ott-animation-show {
+  @include ea-animation(ott_animation_show, .3s, $easeOutQuint, .2s, forwards);
+}
+@include ea-keyframes(ott_animation_show){
+  0% {
+    opacity: 0;
+    @include ea-transform(scale(0));
+  }
+  100% {
+    opacity: 1;
+    @include ea-transform(scale(1));
+  }
+}
