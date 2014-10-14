@@ -112,7 +112,7 @@
     "@screen-xs": "480px",
     "@screen-xs-min": "@screen-xs",
     "@screen-phone": "@screen-xs-min",
-    "@screen-sm": "768px",
+    "@screen-sm": "568px",
     "@screen-sm-min": "@screen-sm",
     "@screen-tablet": "@screen-sm-min",
     "@screen-md": "992px",
@@ -421,5 +421,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "http://v3.bootcss.com/customize/?id=6d43e42db13cb61f72e0"
+  "customizerUrl": "http://v3.bootcss.com/customize/?id=df47915d179928449e0c"
 }
