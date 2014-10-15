@@ -1,2 +1,2 @@
-/*! angular 14-10-2014 */
-var bookStoreDirectives=angular.module("bookStoreDirectives",[]);bookStoreDirectives.directive("bookStoreDirective_1",["$scope",function(){}]),bookStoreDirectives.directive("bookStoreDirective_2",["$scope",function(){}]);
+/*! angular 15-10-2014 */
+!function(){"use strict";var myAngularDir=angular.module("MyAngularDir",[]);myAngularDir.directive("halo",function(){return{scope:{flav:"@"},restrict:"AE",template:'<div><input type="text" ng-model="flav"></div>{{flav}}<div ng-transclude></div> ',transclude:!0,link:function(){}}}),myAngularDir.directive("ottHeightInit",function(){return{restrict:"AE",template:"<div ng-transclude></div> ",transclude:!0,link:function(scope,element){var eId=scope.$index;console.log(scope),element.height(element.width()),$(window).off("resize."+eId).on("resize."+eId,function(){element.height(element.width()),console.count("resize:")})}}})}();
