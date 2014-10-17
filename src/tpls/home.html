@@ -1,9 +1,9 @@
 <div class="ott-margin-top"></div>
-<div class="row" ng-init="ottPanels=['user','user','user','user','user','user']">
+<div class="row">
     <div class="col-xs-6 col-sm-4 ott-padding-top ott-padding-bottom" ng-repeat="ottPanel in ottPanels track by $index">
-        <a class="ott-panel ott-bg-gray" ui-sref="{{ottPanel}}" ott-height-init>
-            {{$index}}
-        </a>
+        <div class="ott-panel ott-bg-gray" ui-sref="{{ottPanel}}" ott-height-init>
+            <span ng-bind="ottPanel"></span>
+        </div>
     </div>
 </div>
 <div class="ott-margin-top"></div>

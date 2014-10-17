@@ -14,7 +14,7 @@
                 templateUrl:'/tpls/home.html',
                 controller:function($scope){
                     $scope.indexAnimate = true;
-//                $scope.panels = ['user','user','user','user','user','user'];
+                    $scope.ottPanels = ['user','form','user','user','user','user'];
                     console.log('route1');
                 }
             }
@@ -25,6 +25,20 @@
                     $scope.indexAnimate = false;
                     $scope.userTest = 'wakak';
                     console.log('route2');
+                }
+            }
+        ).state('form',{
+                url:'/form',
+                templateUrl:'/tpls/form.html',
+                controller:function($scope){
+                    $scope.indexAnimate = false;
+                    $scope.user = {
+                        userName:'nuomi74859',
+                        passWord:''
+                    };
+                    $scope.save = function(){
+                        alert('保存数据');
+                    }
                 }
             }
         );
