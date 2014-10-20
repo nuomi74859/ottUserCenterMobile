@@ -60,10 +60,6 @@
                     'touchend':function(e){
                         endX = e.originalEvent.changedTouches[0].clientX;
                         endY = e.originalEvent.changedTouches[0].clientY;
-//                        console.log(e);
-//                        if(endY != startY && endX != startX) {
-//
-//                        }
                         temp = (endY - startY) * (endY - startY) + (endX - startX) * (endX - startX);
                         console.log(temp);
                         if(temp <= moveWidth * moveWidth) {
@@ -80,18 +76,26 @@
             restrict:'A',
             replace:false,
             link:function(scope,element,attr){
+                var moveNum = 0,moveWidth = element.width(),startX,startY,endX,endY,temp = 0;
                 element.on({
                     'touchstart':function(e){
-                        console.log(e);
+                        startX = e.originalEvent.changedTouches[0].clientX;
+                        startY = e.originalEvent.changedTouches[0].clientY;
                         e.preventDefault();
                         e.stopPropagation();
                     },
                     'touchmove':function(e){
-                        console.log(e)
+                        e.preventDefault();
+                        e.stopPropagation();
                     },
                     'touchend':function(e){
-                        console.log(e);
-                        element.trigger('click');
+                        endX = e.originalEvent.changedTouches[0].clientX;
+                        endY = e.originalEvent.changedTouches[0].clientY;
+                        temp = (endY - startY) * (endY - startY) + (endX - startX) * (endX - startX);
+                        console.log(temp);
+                        if(temp <= moveWidth * moveWidth) {
+                            element.trigger('click');
+                        }
                     }
                 });
             }
