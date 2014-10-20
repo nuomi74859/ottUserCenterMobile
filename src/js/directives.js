@@ -21,12 +21,11 @@
     });
     myAngularDir.directive('ottHeightInit',function(){
         return {
-            restrict:'AE',
-            template:'<div ng-transclude></div> ',
-            transclude:true,
+            restrict:'A',
+            replace:false,
             link:function(scope,element,attr){
                 var eId = scope.$index;
-                console.log(scope);
+                console.log(element);
                 element.height(element.width());
                 $(window).off('resize.' + eId).on('resize.' + eId,function(){
                     element.height(element.width());
@@ -35,6 +34,70 @@
             }
         }
     });
+
+    myAngularDir.directive('ottJelly',function(){
+        return {
+            restrict:'A',
+            replace:false,
+            link:function(scope,element,attr){
+                var moveNum = 0,moveWidth = element.width(),startX,startY,endX,endY,temp = 0;
+                element.on({
+                    'touchstart':function(e){
+                        console.log(e);
+                        startX = e.originalEvent.changedTouches[0].clientX;
+                        startY = e.originalEvent.changedTouches[0].clientY;
+                        element.addClass('ott-jelly');
+                        e.preventDefault();
+                        e.stopPropagation();
+                    },
+                    'webkitAnimationEnd':function(e){
+                        element.removeClass('ott-jelly');
+                    },
+                    'touchmove':function(e){
+                        e.preventDefault();
+                        e.stopPropagation();
+                    },
+                    'touchend':function(e){
+                        endX = e.originalEvent.changedTouches[0].clientX;
+                        endY = e.originalEvent.changedTouches[0].clientY;
+//                        console.log(e);
+//                        if(endY != startY && endX != startX) {
+//
+//                        }
+                        temp = (endY - startY) * (endY - startY) + (endX - startX) * (endX - startX);
+                        console.log(temp);
+                        if(temp <= moveWidth * moveWidth) {
+                            element.trigger('click');
+                        }
+                    }
+                });
+            }
+        }
+    });
+
+    myAngularDir.directive('ottTouch',function(){
+        return {
+            restrict:'A',
+            replace:false,
+            link:function(scope,element,attr){
+                element.on({
+                    'touchstart':function(e){
+                        console.log(e);
+                        e.preventDefault();
+                        e.stopPropagation();
+                    },
+                    'touchmove':function(e){
+                        console.log(e)
+                    },
+                    'touchend':function(e){
+                        console.log(e);
+                        element.trigger('click');
+                    }
+                });
+            }
+        }
+    });
+
     myAngularDir.directive('contenteditable',function(){
         return {
             require:'ngModel',

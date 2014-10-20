@@ -1,14 +1,16 @@
-<button ui-sref="home">返回home</button>
-<p>I'm user  <span ng-bind-template="{{userTest}}"></span></p>
-<input type="text" ng-model="userTest">
-
-<br>
-
-<br>
-
-<halo flav="userTest"></halo>
-
 <div>
-    <div contentEditable="true" ng-model="content" title="Click to edit">Some</div>
-    <pre>model = {{content}}</pre>
+    <button ui-sref="home" ott-touch>返回home</button>
+    <p>I'm user  <span ng-bind-template="{{userTest}}"></span></p>
+    <input type="text" ng-model="userTest">
+
+    <br>
+
+    <br>
+
+    <halo flav="userTest"></halo>
+
+    <div>
+        <div contentEditable="true" ng-model="content" title="Click to edit">Some</div>
+        <pre>model = {{content}}</pre>
+    </div>
 </div>

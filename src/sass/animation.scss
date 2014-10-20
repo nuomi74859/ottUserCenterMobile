@@ -42,3 +42,25 @@
     @include ea-transform(scale(0));
   }
 }
+
+.ott-jelly {
+  @include ea-animation(ott_jelly, .3s, ease, 0s);
+}
+
+@include ea-keyframes(ott_jelly){
+  0% {
+    @include ea-transform(scale(1,1));
+  }
+  25% {
+    @include ea-transform(scale(0.9,1.1));
+  }
+  50% {
+    @include ea-transform(scale(1.1,0.9));
+  }
+  75% {
+    @include ea-transform(scale(0.95,1.05));
+  }
+  100% {
+    @include ea-transform(scale(1,1));
+  }
+}
