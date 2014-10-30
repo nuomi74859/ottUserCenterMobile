@@ -2,5 +2,6 @@
 <form name="myForm" ng-submit="save()">
     <input name="userName" type="text" ng-model="user.userName" required>
     <input name="password" type="password" ng-model="user.passWord" required>
+    <input name="number" type="number"  required>
     <input type="submit" ng-disabled="myForm.$invalid">
 </form>

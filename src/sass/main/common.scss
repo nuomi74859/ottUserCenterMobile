@@ -1,3 +1,4 @@
+@import "compass/css3";
 .clearfix {
   clear: both;
 }
@@ -6,6 +7,15 @@ div, *:after, *:before {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+//* {
+//  -moz-user-select: -moz-none;
+//  -khtml-user-select: none;
+//  -webkit-user-select: none;
+//  -o-user-select: none;
+//  user-select: none;
+//}
+
 html {
   height: 100%;
   overflow: hidden;
@@ -21,7 +31,18 @@ body {
 a {
   text-decoration: none;
 }
+//清除input number的上下键
+::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 
+input,button {
+  -webkit-appearance: none;
+  @include box-shadow(none);
+  @include border-radius(0px);
+  border: 1px solid black;
+//  background: rgba(0,0,0,0);
+}
 
 @import "../transition";
 @import "../color";
