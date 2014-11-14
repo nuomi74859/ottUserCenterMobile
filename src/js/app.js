@@ -4,7 +4,7 @@
 (function(){
     'use strict';
     var myAngularApp = angular.module('MyAngularApp', [
-        'ui.router', 'ngAnimate','MyAngularCtrls','MyAngularDir'
+        'ui.router', 'ngAnimate','MyAngularCtrls','MyAngularDir','MyAngularFilter'
     ]);
 
     myAngularApp.config(function($stateProvider, $urlRouterProvider){

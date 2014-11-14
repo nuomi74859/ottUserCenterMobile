@@ -1,2 +1,2 @@
-/*! angular 31-10-2014 */
-var bookStoreFilters=angular.module("bookStoreFilters",[]);bookStoreFilters.filter("bookStoreFilter_1",["$scope",function(){}]),bookStoreFilters.filter("bookStoreFilter_2",["$scope",function(){}]);
+/*! angular 14-11-2014 */
+!function(){"use strict";var myAngularFilter=angular.module("MyAngularFilter",[]);myAngularFilter.filter("filter1",function(){return function(item,num){return item+=num}})}();
