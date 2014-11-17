@@ -22,6 +22,10 @@
 .other.ng-leave {
   @include ea-animation(ott_animation_hide, .6s, $easeOutQuint, 0s, forwards);
 }
+.ott-animation-velocity {
+  width: 1000px;
+  @include ea-animation(ott_animation_velocity,.01s,$count:9999)
+}
 @include ea-keyframes(ott_animation_show){
   0% {
     opacity: 0;
@@ -62,5 +66,16 @@
   }
   100% {
     @include ea-transform(scale(1,1));
+  }
+}
+
+@include ea-keyframes(ott_animation_velocity){
+  0% {
+    @include ea-transform(translateX(0));
+    @include ea-transform(rotateZ(0));
+  }
+  100% {
+    @include ea-transform(translateX(200px));
+    @include ea-transform(rotateZ(45deg));
   }
 }

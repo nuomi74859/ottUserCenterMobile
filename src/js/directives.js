@@ -121,5 +121,25 @@
             }
         }
     });
+
+//    velocity js动画测试
+    myAngularDir.directive('velocity',function($timeout){
+        return {
+            restrict:'A',
+            replace:false,
+            link:function(scope,element,attr){
+                $timeout(function(){
+                    element.velocity({
+                        translateZ:0,
+                        translateX:'200px',
+                        rotateZ:'45deg'
+                    },{
+                        duration:10,
+                        loop:true
+                    });
+                },1000);
+            }
+        }
+    });
 })();
 

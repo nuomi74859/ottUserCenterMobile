@@ -14,7 +14,7 @@
                 templateUrl:'/tpls/home.html',
                 controller:function($scope,$http,$location){
                     $scope.indexAnimate = true;
-                    $scope.ottPanels = ['user','form','user','user','user','user'];
+                    $scope.ottPanels = ['velocity','form','test','user','user','user'];
                     console.log('route1');
                     $http.get('/testData.json').success(function(data,status,headers,config){
 //                        console.log(data,status,headers,config);
@@ -43,6 +43,27 @@
                     $scope.save = function(){
                         alert('保存数据');
                     }
+                }
+            }
+        ).state('test',{
+                url:'/test',
+                templateUrl:'/tpls/test.html',
+                controller:function($scope){
+                    $scope.indexAnimate = false;
+                    $scope.user = {
+                        userName:'nuomi74859',
+                        passWord:''
+                    };
+                    $scope.save = function(){
+                        alert('保存数据');
+                    }
+                }
+            }
+        ).state('velocity',{
+                url:'/velocity',
+                templateUrl:'/tpls/velocity.html',
+                controller:function($scope){
+                    $scope.indexAnimate = false;
                 }
             }
         );

@@ -1,2 +1,2 @@
-/*! angular 14-11-2014 */
+/*! angular 17-11-2014 */
 !function(){"use strict";var myAngularFilter=angular.module("MyAngularFilter",[]);myAngularFilter.filter("filter1",function(){return function(item,num){return item+=num}})}();
