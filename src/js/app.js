@@ -12,10 +12,14 @@
         $stateProvider.state('home',{
                 url:'/home',
                 templateUrl:'/tpls/home.html',
-                controller:function($scope){
+                controller:function($scope,$http,$location){
                     $scope.indexAnimate = true;
                     $scope.ottPanels = ['user','form','user','user','user','user'];
                     console.log('route1');
+                    $http.get('/testData.json').success(function(data,status,headers,config){
+//                        console.log(data,status,headers,config);
+                    });
+                    console.log($location.path());
                 }
             }
         ).state('user',{
